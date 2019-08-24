@@ -14,7 +14,8 @@
        <nav>
         <% if user_signed_in? %>
            <%= link_to 'プロフィール', edit_user_registration_path %>
-           <%= link_to 'ログアウト', destroy__user_session_path, method: :delete %>
+           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+           <%= link_to "退会", '/users', method: :delete, data: {confirm: "本当に退会しますか？"} %>
          <% end %>
        </nav>
    </header>

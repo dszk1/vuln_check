@@ -1,0 +1,20 @@
+<h2>ポエムの編集</h2>
+
+<%= form_for(@post, url: post_path, html: { method: :put }) do |f| %>
+
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject, autofocus: true, autocomplete: "subject" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, autofocus: true, autocomplete: "content" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", post_path(params[:id]) %>

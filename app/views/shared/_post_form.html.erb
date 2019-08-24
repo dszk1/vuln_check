@@ -1,0 +1,7 @@
+<%= form_for(@new_post) do |f| %>
+  <div class="field">
+    <%= f.text_area :subject, placeholder: "題名" %>
+    <%= f.text_area :content, placeholder: "ポエム" %>
+  </div>
+  <%= f.submit "送信", class: "btn btn-primary" %>
+<% end %>

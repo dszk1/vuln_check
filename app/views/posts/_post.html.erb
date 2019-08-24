@@ -1,0 +1,5 @@
+<% @user.posts.each do |p| %>
+  <% unless p.id.nil? %>
+    <p><%= link_to p.subject, post_path(id: "#{p.id}") %></p>
+    <% end %>
+<% end %>
