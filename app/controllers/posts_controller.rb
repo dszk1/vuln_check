@@ -34,6 +34,14 @@ class PostsController < ApplicationController
   def destroy
   end
 
+  def index
+    @user = current_user
+    @posts = @user.posts.search(params[:search])
+    @new_post = current_user.posts.build
+  end
+
+  private
+
   def post_param
     params.require(:post).permit(:subject, :content)
   end

@@ -3,8 +3,8 @@
 <%= form_for(@post, url: post_path, html: { method: :put }) do |f| %>
 
   <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject, autofocus: true, autocomplete: "subject" %>
+    <%== f.label :subject %><br />
+    <%== f.text_field :subject, autofocus: true, autocomplete: "subject" %>
   </div>
 
   <div class="field">
