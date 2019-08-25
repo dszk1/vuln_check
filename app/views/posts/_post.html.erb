@@ -1,3 +1,6 @@
+<% if @search.present? %>
+ <%== @search %>
+<% end %>
 <% @posts.each do |p| %>
   <p><%= link_to p.subject, post_path(id: "#{p.id}") %></p>
 <% end %>

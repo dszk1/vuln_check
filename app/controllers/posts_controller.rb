@@ -36,7 +36,8 @@ class PostsController < ApplicationController
 
   def index
     @user = current_user
-    @posts = @user.posts.search(params[:search])
+    @search = params[:search]
+    @posts = @user.posts.search(@search)
     @new_post = current_user.posts.build
   end
 
