@@ -4,11 +4,9 @@ class PostsController < ApplicationController
     if @post.save
       flash[:success] = "正常に投稿が完了しました"
       redirect_to root_url
-    else
-      render 'static_pages/home'
     end
   end
-  
+
   def show
     @post = Post.find(params[:id])
     # @post = current_user.posts.find(params[:id])
@@ -32,6 +30,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    post = current_user.posts.find_by(id: params[:id])
+    post.destroy
+    flash[:success] = "ポエムは削除されました"
+    redirect_to root_url
   end
 
   def index
